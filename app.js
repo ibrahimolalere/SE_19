@@ -6,7 +6,7 @@ const app = express();
 const mongoose = require('mongoose');
 const To_do = require('./models/to_do');
 const morgan = require('morgan')
-
+const PORT = process.env.PORT || 3000
 
 //view engine
 app.set('view engine', 'ejs');
@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 //connect to mongodb and listen for requests
 const dbURI = 'mongodb+srv://ibrahim:poesy@todowebsite.psixhrg.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(dbURI)
-    .then((result) => app.listen(process.env.PORT || 3000))
+    .then((result) => app.listen(PORT)) 
     .catch((err) => console.log(err))
 
 
