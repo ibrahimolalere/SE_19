@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+     
+    <%- include('./partials/nav.ejs') %>
+
+
+    <div class="create-to-do content">
+        <form action="/to-dos/edit/<%= to_do._id %> " method="POST" >
+            <label for="title">To do Title:</label>
+            <input type="text" value="<%= to_do.title %>"" id="title" name="title" required>
+            <label for="summary">To do Summary:</label>
+            <input type="text" value = "<%= to_do.summary %>" id="summary" name= "summary" required>
+            <label for="body">Full Description:</label>
+            <textarea id="body"  name="body" required>  <%= to_do.body %> </textarea>
+
+            <button>Submit</button>
+            
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

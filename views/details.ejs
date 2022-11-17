@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+     
+    <%- include('./partials/nav.ejs') %>
+
+   <div class="details content">
+       <h2><%= to_do.title %></h2>
+       <div class="content">
+           <p><%= to_do.body %></p>
+           <a id="delete-id" class="<%= to_do._id %>" >Delete</a>
+           <a id="edit-id" href="/to-dos/view/<%= to_do._id %>" > Edit</a>
+       </div>
+
+   </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+
+    <script>
+        const trashcan = document.getElementById('delete-id');
+        
+        console.log(trashcan.className)
+
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/to-dos/to-do/delete/${trashcan.className}`;
+            console.log(trashcan)
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                window.location.href = `http://localhost:3000/${data.redirect}`;
+            })
+            .catch(err => console.log(err));
+        })
+    </script>
+</body>
+</html>

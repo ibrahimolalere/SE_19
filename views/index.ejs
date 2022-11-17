@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+     
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="to_dos content">
+        <h2>All To-dos</h2>
+
+        <% if (to_dos.length > 0) { %>
+            <% to_dos.forEach(to_do => { %>
+                <a class="single" href="/to-dos/to-do/<%= to_do._id %>">
+
+                    <h3 class ="title"> <%= to_do.title %> </h3>
+                    <p class = "summary"> <%= to_do.summary %> </p>
+                 </a>
+
+            <% }) %>
+
+
+        <% } else { %>
+            <p>There are no to-dos yet</p>
+
+            <% } %>
+            
+
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
