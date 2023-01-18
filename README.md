@@ -8,6 +8,8 @@ Since it is my first time using node.js, I chose a simple project where I can ea
 
 ![Group 512662](https://user-images.githubusercontent.com/86142501/213312330-c2a5a660-a4d6-411c-b038-817c32242b6e.png)
 
+When are client makes a request through the browser interface (URL inputs, forms, buttons, etc), it is passed to the node server where it is executed
+
 #### Node server
 The node server has an event loop which executes a stack of qued request. Requests handled within the server are called middlewares. For requests that need to access the database (blocking i/o), they are handled by the nodejs internal threads which allows it o be processed in the database using models to interact. 
 
