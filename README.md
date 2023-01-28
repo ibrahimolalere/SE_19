@@ -6,7 +6,9 @@ Since it is my first time using node.js, I chose a simple project where I can ea
 
 ## Installing Dependencies
 
-Unfortunately, I pushed the node modules to git with the rest of the project files because I didn’t know I should not have. The node modules can easily be installed locally by running “npm install” in the terminal. This would install all the dependencies of the project. I decided not to delete the node modules from git up because I am not sure how it might affect my hosting.
+Download and open
+
+I pushed the node modules to git with the rest of the project files because I didn’t know I should not have. The node modules can easily be installed locally by running “npm install” in the terminal. This would install all the dependencies of the project. I decided not to delete the node modules from git up because I am not sure how it might affect my hosting.
 
 
 ## Architecture
